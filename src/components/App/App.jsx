@@ -1,11 +1,14 @@
-import "../App.css";
+import "./App.css";
+import Header from "../Header/Header";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="app"></div>
+      <div className="page">
+        <dv className="page__content">
+          <Header />
+        </dv>
+      </div>
     </>
   );
 }
