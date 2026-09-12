@@ -4,6 +4,10 @@ import avatar from "../../assets/avatar.svg";
 import { useState } from "react";
 
 function Header() {
+  const currentDate = new Date().toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   function toggleMobileMenu() {
     setIsMobileMenuOpened(!isMobileMenuOpened);
@@ -11,7 +15,9 @@ function Header() {
   return (
     <header className="header">
       <img className="header__logo" src={logo} />
-      <p className="header__date-and-location">DATE, LOCATION</p>
+      <p className="header__date-and-location">
+        {currentDate}, {location}
+      </p>
       <button className="header__add-clothes-btn">+ Add clothes</button>
       <div className="header__user-container">
         <p className="header__username">Terrence Tegegne</p>
