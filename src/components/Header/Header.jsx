@@ -8,6 +8,7 @@ function Header() {
     month: "long",
     day: "numeric",
   });
+  const location = "New York";
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   function toggleMobileMenu() {
     setIsMobileMenuOpened(!isMobileMenuOpened);
