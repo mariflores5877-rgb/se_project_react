@@ -3,7 +3,7 @@ import logo from "../../assets/logo.svg";
 import avatar from "../../assets/avatar.svg";
 import { useState } from "react";
 
-function Header() {
+function Header({ onAddClothesClick }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -19,7 +19,9 @@ function Header() {
       <p className="header__date-and-location">
         {currentDate}, {location}
       </p>
-      <button className="header__add-clothes-btn">+ Add clothes</button>
+      <button onClick={onAddClothesClick} className="header__add-clothes-btn">
+        + Add clothes
+      </button>
       <div className="header__user-container">
         <p className="header__username">Terrence Tegegne</p>
         <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
