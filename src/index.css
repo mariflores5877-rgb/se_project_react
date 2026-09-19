@@ -3,3 +3,7 @@
   font-family: CabinetGrotesk;
   src: url(./vendor/CabinetGrotesk-Bold.woff);
 }
+
+body {
+  font-family: CabinetGrotesk, Arial, sans-serif;
+}
