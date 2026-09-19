@@ -1,8 +1,12 @@
 .cards {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
 }
 
 .cards__text {
-  font-family: CabinetGrotesk, Arial, sans-serif;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .cards__list {

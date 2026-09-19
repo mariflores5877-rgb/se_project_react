@@ -1,8 +1,12 @@
 .card {
   width: 323px;
+  height: 328px;
   position: relative;
   display: flex;
   justify-content: center;
+  border: 1px solid #0000004d;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .card__name {
@@ -13,4 +17,5 @@
 
 .card__image {
   width: 100%;
+  cursor: pointer;
 }
