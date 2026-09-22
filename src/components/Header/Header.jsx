@@ -3,7 +3,7 @@ import logo from "../../assets/logo.svg";
 import avatar from "../../assets/avatar.svg";
 import { useState } from "react";
 
-function Header({ onAddClothesClick }) {
+function Header({ onAddClothesClick, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -17,7 +17,7 @@ function Header({ onAddClothesClick }) {
     <header className="header">
       <img className="header__logo" src={logo} />
       <p className="header__date-and-location">
-        {currentDate}, {location}
+        {currentDate}, {weatherData.city}
       </p>
       <button onClick={onAddClothesClick} className="header__add-clothes-btn">
         + Add clothes
