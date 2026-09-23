@@ -6,21 +6,40 @@
 
 .header__logo {
   margin-right: 24px;
+  font-size: 20px;
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header__date-and-location {
   margin: 0;
+  font-size: 14px;
 }
 
 .header__add-clothes-btn {
-  background: none;
   border: none;
+  border-radius: 4px;
+  background-color: #00000080;
+  color: #fff;
   cursor: pointer;
   margin: 0 20px 0 auto;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   padding: 0;
+}
+
+.header__close-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
 }
 
 .header__user-container {
@@ -31,4 +50,56 @@
 
 .header__username {
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    z-index: 10;
+  }
+
+  .header__nav_opened {
+    display: flex;
+  }
+
+  .header__menu-btn {
+    display: block;
+  }
+
+  .header__close-btn {
+    display: block;
+    align-self: flex-end;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .header__menu-btn,
+  .header__close-btn {
+    display: none;
+  }
 }

@@ -16,11 +16,29 @@ function Header({ onAddClothesClick, weatherData }) {
   return (
     <header className="header">
       <img className="header__logo" src={logo} />
-      <p className="header__date-and-location">
-        {currentDate}, {weatherData.city}
-      </p>
-      <button onClick={onAddClothesClick} className="header__add-clothes-btn">
-        + Add clothes
+      <div
+        className={`"header__nav" ${isMobileMenuOpened ? "header__nav_opened" : ""}`}
+      >
+        <p className="header__date-and-location">
+          {currentDate}, {weatherData.city}
+        </p>
+        <button onClick={onAddClothesClick} className="header__add-clothes-btn">
+          + Add clothes
+        </button>
+        <button
+          onClick={toggleMobileMenu}
+          aria-label="Close"
+          className="header__close-btn"
+        >
+          x
+        </button>
+      </div>
+      <button
+        onClick={toggleMobileMenu}
+        aria-label="Menu"
+        className="header__menu-btn"
+      >
+        =
       </button>
       <div className="header__user-container">
         <p className="header__username">Terrence Tegegne</p>
