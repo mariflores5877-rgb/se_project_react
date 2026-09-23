@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { APIkey, coordinates } from "../../utils/constants";
 import Header from "../Header/Header";
+import WeatherCard from "../WeatherCard/WeatherCard";
 import Main from "../Main/Main";
 import { defaultClothingItems } from "../../utils/constants";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -63,6 +64,7 @@ function App() {
             onAddClothesClick={handleAddClothesClick}
             weatherData={weatherData}
           />
+          <WeatherCard weatherData={weatherData} />
           <Main
             weatherData={weatherData}
             clothingItems={clothingItems}
