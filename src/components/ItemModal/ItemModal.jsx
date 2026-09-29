@@ -1,4 +1,5 @@
 import "./ItemModal.css";
+import close from "../../assets/close.svg";
 
 function ItemModal({ isOpen, onClose, card }) {
   return (
@@ -10,7 +11,7 @@ function ItemModal({ isOpen, onClose, card }) {
           className="modal__close"
           aria-label="Close"
         >
-          &times;
+          <img src={close} alt="Close" className="modal__close-icon" />
         </button>
         <img src={card?.link} alt={card?.name} className="modal__image" />
         <div className="modal__footer">
