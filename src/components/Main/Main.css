@@ -16,3 +16,16 @@
   list-style-type: none;
   gap: 21px;
 }
+
+@media screen and (max-width: 767px) {
+  .cards__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 305px;
+  }
+
+  .cards__text {
+    font-size: inherit;
+    margin: 16px 0px 20px 0;
+  }
+}
