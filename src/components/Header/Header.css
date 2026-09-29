@@ -5,28 +5,25 @@
 }
 
 .header__logo {
-  margin-right: 24px;
+  margin: 0px 29px 0px -36px;
   font-size: 20px;
 }
 
 .header__nav {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 }
 
 .header__date-and-location {
   margin: 0;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .header__add-clothes-btn {
   border: none;
   border-radius: 4px;
-  background-color: #00000080;
-  color: #fff;
   cursor: pointer;
-  margin: 0 20px 0 auto;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -52,41 +49,92 @@
   margin: 0;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .header {
+    display: flex;
+    flex-direction: revert;
+    gap: 16px 16px;
+    padding: 16px 16px;
+  }
+
+  .header__logo {
+    margin: 20px 29px 0px -16px;
+  }
+
+  .header__left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
     flex-direction: column;
-    gap: 16px;
+    min-width: 0;
   }
 
   .header__nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    padding: 16px;
-    border-bottom: 1px solid #ddd;
-    z-index: 10;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
   }
 
-  .header__nav_opened {
+  .header__user-container {
+    display: none;
+  }
+
+  .header__user-container_opened {
     display: flex;
+    position: absolute;
+    top: 16px;
+    left: 5px;
+    width: 330px;
+    height: 170px;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 16px;
+    gap: 12px;
+    z-index: 20;
+    border-radius: 16px;
+    box-shadow: 0px 2px 8px 0px #0000001a;
   }
 
   .header__menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    left: 108px;
+    top: 5px;
+    margin: 0;
+    position: relative;
+    z-index: 20;
+    border-radius: 8px;
+    flex-shrink: 0;
+    align-self: start;
+    box-shadow: 0px 2px 8px 0px #0000001a;
+    border: none;
   }
 
   .header__close-btn {
     display: block;
-    align-self: flex-end;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .header__close-icon {
+    width: 24px;
+    height: 24px;
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .header {
-    flex-direction: row;
+    justify-content: space-between;
   }
 
   .header__nav {
@@ -96,6 +144,12 @@
     background-color: transparent;
     border: none;
     padding: 0;
+  }
+
+  .header__left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
   }
 
   .header__menu-btn,

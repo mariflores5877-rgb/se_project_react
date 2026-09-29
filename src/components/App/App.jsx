@@ -24,7 +24,13 @@ function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [weatherType, setWeatherType] = useState("");
 
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  function toggleMobileMenu() {
+    setIsMobileMenuOpened(!isMobileMenuOpened);
+  }
+
   function handleAddClothesClick() {
+    setIsMobileMenuOpened(false);
     setActiveModal("add-garment");
   }
 
@@ -61,10 +67,11 @@ function App() {
       <div className="page">
         <div className="page__content">
           <Header
+            isMobileMenuOpened={isMobileMenuOpened}
+            toggleMobileMenu={toggleMobileMenu}
             onAddClothesClick={handleAddClothesClick}
             weatherData={weatherData}
           />
-          <WeatherCard weatherData={weatherData} />
           <Main
             weatherData={weatherData}
             clothingItems={clothingItems}
