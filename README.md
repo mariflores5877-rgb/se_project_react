@@ -1,9 +1,22 @@
-# React + Vite
+# WTWR (What To Wear)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A weather-based clothing recommendation app. It checks the current temperature for your location and shows which items from your wardrobe suit the weather.
 
-Project Link:
-https://github.com/mariflores5877-rgb/se_project_react/
+## Design
+
+- Built from a Figma design with desktop (1440px) and mobile layouts.
+
+## Live Site:
+
+https://mariflores5877-rgb.github.io/se_project_react/
+
+## Technologies
+
+- React 18 with hooks ('useState', 'useEffect')
+- Vite for development an dbuilds
+- Weather API integration
+- ESLint
+- Deployed with GitHub Pages (`gh-pages`)
 
 Currently, two official plugins are available:
 
