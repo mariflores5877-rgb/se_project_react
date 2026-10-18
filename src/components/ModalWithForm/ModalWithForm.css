@@ -139,10 +139,10 @@
     height: 44px;
   }
 
-  .modal_type_form {
+  .modal_type_add-garment {
     align-items: flex-end;
-    left: -525px;
-    top: -60px;
+    left: 525px;
+    top: 60px;
   }
 
   .modal_type_form .modal__content {
