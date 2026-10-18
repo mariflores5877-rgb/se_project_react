@@ -56,7 +56,7 @@
   .modal__content_type_image {
     width: 340px;
     justify-content: flex-start;
-    left: -510px;
+    left: 510px;
     margin: 18px 16px 18px 16px;
   }
 
