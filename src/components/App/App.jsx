@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { APIkey, coordinates } from "../../utils/constants";
 import Header from "../Header/Header";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import Main from "../Main/Main";
 import { defaultClothingItems } from "../../utils/constants";
@@ -15,8 +14,10 @@ import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
-    temp: { F: 999 },
+    temp: { F: 999, C: 999 },
     city: "",
+    condition: "",
+    isDay: false,
   });
 
   const [value, setValue] = useState(false);
@@ -27,6 +28,11 @@ function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [weatherType, setWeatherType] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const handleToggleSwitchChange = () => {
+    currentTemperatureUnit === "F"
+      ? setCurrentTemperatureUnit("C")
+      : setCurrentTemperatureUnit("F");
+  };
 
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   function toggleMobileMenu() {
@@ -77,13 +83,7 @@ function App() {
             toggleMobileMenu={toggleMobileMenu}
             onAddClothesClick={handleAddClothesClick}
             weatherData={weatherData}
-          >
-            <ToggleSwitch
-              onColor="#FFFFFF"
-              isOn={value}
-              handleToggle={() => setValue(!value)}
-            />
-          </Header>
+          />
           <Main
             weatherData={weatherData}
             clothingItems={clothingItems}
