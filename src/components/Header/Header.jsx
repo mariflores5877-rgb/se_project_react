@@ -3,6 +3,7 @@ import logo from "../../assets/logo.svg";
 import avatar from "../../assets/avatar.svg";
 import close from "../../assets/close.svg";
 import hamburger from "../../assets/hamburger.svg";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { useState } from "react";
 
 function Header({
@@ -39,6 +40,7 @@ function Header({
         >
           <img src={close} alt="Close" className="header__close-icon" />
         </button>
+        <ToggleSwitch />
         <button onClick={onAddClothesClick} className="header__add-clothes-btn">
           + Add clothes
         </button>
