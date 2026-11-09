@@ -1,4 +1,5 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import avatar from "../../assets/avatar.svg";
 import close from "../../assets/close.svg";
@@ -21,7 +22,9 @@ function Header({
   return (
     <header className="header">
       <div className="header__left">
-        <img className="header__logo" src={logo} alt="WTWR" />
+        <Link to="/">
+          <img className="header__logo" src={logo} alt="WTWR" />
+        </Link>
         <div
           className={`header__left ${isMobileMenuOpened ? "header__nav_opened" : ""}`}
         >
@@ -44,8 +47,10 @@ function Header({
         <button onClick={onAddClothesClick} className="header__add-clothes-btn">
           + Add clothes
         </button>
-        <p className="header__username">Terrence Tegegne</p>
-        <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
+        <Link to="/profile" className="header__profile-link">
+          <p className="header__username">Terrence Tegegne</p>
+          <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
+        </Link>
       </div>
 
       <button
