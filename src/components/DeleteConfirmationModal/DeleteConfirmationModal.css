@@ -1,0 +1,40 @@
+.modal__content_type_confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 670px;
+  height: 280px;
+  padding: 34px 36px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.confirm-modal__text {
+  margin: 10px 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.confirm-modal__delete-btn,
+.confirm-modal__cancel-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.confirm-modal__delete-btn {
+  color: #ff4d00;
+}
+
+.confirm-modal__cancel-btn {
+  color: #000000;
+}

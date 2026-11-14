@@ -4,11 +4,14 @@ import { APIkey, coordinates } from "../../utils/constants";
 import Header from "../Header/Header";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import Main from "../Main/Main";
-import { defaultClothingItems } from "../../utils/constants";
+
+import { getItems, addItem, deleteItem } from "../../utils/api";
 import { Route, Routes } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import ClothesSection from "../ClothesSection/ClothesSection";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
+
 import ItemModal from "../ItemModal/ItemModal";
 import Footer from "../Footer/Footer";
 import { filterWeatherData, getWeather } from "../../utils/weatherApi";
@@ -23,13 +26,11 @@ function App() {
     isDay: false,
   });
 
-  const [value, setValue] = useState(false);
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [name, setName] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [weatherType, setWeatherType] = useState("");
+  const [cardToDelete, setCardToDelete] = useState(null);
+
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
@@ -57,15 +58,34 @@ function App() {
   }
 
   function handleAddItemSubmit(inputValues, resetForm) {
-    const newItem = {
-      _id: Date.now(),
+    addItem({
       name: inputValues.name,
-      link: inputValues.link,
+      imageUrl: inputValues.imageUrl,
       weather: inputValues.weatherType,
-    };
-    setClothingItems([newItem, ...clothingItems]);
-    handleCloseModal("");
-    resetForm();
+    })
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+        handleCloseModal("");
+        resetForm();
+      })
+      .catch(console.error);
+  }
+
+  function handleCardDelete() {
+    deleteItem(cardToDelete._id)
+      .then(() => {
+        setClothingItems(
+          clothingItems.filter((item) => item._id !== cardToDelete._id),
+        );
+        handleCloseModal();
+        setCardToDelete(null);
+      })
+      .catch(console.error);
+  }
+
+  function openConfirmationModal(card) {
+    setCardToDelete(card);
+    setActiveModal("delete-confirmation");
   }
 
   useEffect(() => {
@@ -74,6 +94,9 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
+      .catch(console.error);
+    getItems()
+      .then((data) => setClothingItems(data))
       .catch(console.error);
   }, []);
 
@@ -124,6 +147,12 @@ function App() {
           isOpen={activeModal === "preview-item"}
           onClose={handleCloseModal}
           card={selectedCard}
+          onDelete={openConfirmationModal}
+        />
+        <DeleteConfirmationModal
+          isOpen={activeModal === "delete-confirmation"}
+          onClose={handleCloseModal}
+          onConfirm={handleCardDelete}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
