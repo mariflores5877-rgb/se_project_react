@@ -87,38 +87,8 @@
     {
       "name": "Old-money fashion",
       "imageUrl": "https://th.bing.com/th/id/OIP.jK9jWbmF4-6xoFjjh0fyxwHaJQ?w=205&h=256&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-      "weather": "hot",
-      "_id": 19
-    },
-    {
-      "name": "Old-money fashion",
-      "imageUrl": "https://th.bing.com/th/id/OIP.jK9jWbmF4-6xoFjjh0fyxwHaJQ?w=205&h=256&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       "weather": "warm",
       "_id": 20
-    },
-    {
-      "name": "Classic power couple",
-      "imageUrl": "https://www.bing.com/images/search?view=detailV2&ccid=zSK8%2bWUb&id=178A332E8C46A2369D300F465F5331DADF10828E&thid=OIP.zSK8-WUbRIUhaNHkJhSkdQHaQC&mediaurl=https%3a%2f%2fi.pinimg.com%2f736x%2f0d%2fae%2f75%2f0dae7536d67b596c5992df2fb364482e.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.cd22bcf9651b44852168d1e42614a475%3frik%3djoIQ39oxU19GDw%26pid%3dImgRaw%26r%3d0&exph=1200&expw=554&q=old+money+couple+aesthetic+like+addams+family+in+new+york&FORM=IRPRST&ck=E7A9BAEDAD9DCB5E55D9028ADF046524&selectedIndex=52&itb=0",
-      "weather": "hot",
-      "_id": 21
-    },
-    {
-      "name": "Classic power couple",
-      "imageUrl": "https://i.pinimg.com/originals/db/16/00/db1600be454c1ce14fbe47f54bb61b11.jpg",
-      "weather": "warm",
-      "_id": 22
-    },
-    {
-      "name": "Couple Aesthetic",
-      "imageUrl": "https://i.pinimg.com/originals/52/55/1e/52551e782660797183e7df7bcaf93e65.jpg",
-      "weather": "cold",
-      "_id": 23
-    },
-    {
-      "name": "Fall Styles",
-      "imageUrl": "https://i.pinimg.com/originals/a4/43/f2/a443f2fafa58db8f096e7e1eed754b72.jpg",
-      "weather": "warm",
-      "_id": 25
     },
     {
       "name": "Fall Style",
@@ -143,12 +113,6 @@
       "imageUrl": "https://cdna.lystit.com/520/650/n/photos/thebs/a08755f9/ugg-Brown-Classic-Ultra-Mini-Boot.jpeg",
       "weather": "cold",
       "_id": 29
-    },
-    {
-      "name": "Lace-up Uggs",
-      "imageUrl": "https://i.pinimg.com/736x/33/23/6d/33236d6be43ee414042ac63e98b12677.jpg",
-      "weather": "cold",
-      "_id": 30
     }
   ]
 }
