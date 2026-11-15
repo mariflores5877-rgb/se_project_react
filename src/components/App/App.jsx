@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { APIkey, coordinates } from "../../utils/constants";
+import { apiKey, coordinates } from "../../utils/constants";
 import Header from "../Header/Header";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import Main from "../Main/Main";
@@ -64,7 +64,7 @@ function App() {
       weather: inputValues.weatherType,
     })
       .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+        setClothingItems((prevItems) => [newItem, ...prevItems]);
         handleCloseModal("");
         resetForm();
       })
@@ -74,8 +74,8 @@ function App() {
   function handleCardDelete() {
     deleteItem(cardToDelete._id)
       .then(() => {
-        setClothingItems(
-          clothingItems.filter((item) => item._id !== cardToDelete._id),
+        setClothingItems((prevItems) =>
+          prevItems.filter((item) => item._id !== cardToDelete._id),
         );
         handleCloseModal();
         setCardToDelete(null);
@@ -89,7 +89,7 @@ function App() {
   }
 
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
