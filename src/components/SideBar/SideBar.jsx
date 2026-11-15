@@ -6,7 +6,7 @@ export default function SideBar() {
 
   return (
     <aside className="sidebar">
-      <img src={avatar} alt="" className="sidebar__avatar" />
+      <img src={avatar} alt={username} className="sidebar__avatar" />
       <p className="sidebar__username">{username}</p>
     </aside>
   );
