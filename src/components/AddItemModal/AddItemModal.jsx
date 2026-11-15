@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
@@ -7,6 +8,12 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     weatherType: "",
   };
   const { values, handleChange, setValues } = useForm(defaultValues);
+
+  useEffect(() => {
+    if (isOpen) {
+      setValues(defaultValues);
+    }
+  }, [isOpen]);
 
   function resetForm() {
     setValues(defaultValues);
@@ -60,6 +67,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             name="weatherType"
             type="radio"
             value="hot"
+            required
             className="modal__radio-input"
             checked={values.weatherType === "hot"}
             onChange={handleChange}
