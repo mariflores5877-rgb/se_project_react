@@ -6,9 +6,15 @@ A weather-based clothing recommendation app. It checks the current temperature f
 
 - Built from a Figma design with desktop (1440px) and mobile layouts.
 
+## Project Pitch
+
+Check out [MarisolFlores_ProjectPitch\_\_Project 11](https://drive.google.com/file/d/1jUHLN3FQZ84VGsbW7yQBnqhIf3U3kQ_O/view?usp=sharing), where I describe my project and some challenges I faced while building it.
+
 ## Live Site:
 
 https://mariflores5877-rgb.github.io/se_project_react/
+
+Note: the live site doesn't show clothing items yet because the mock server (json-server) only runs locally.
 
 ## Technologies
 
